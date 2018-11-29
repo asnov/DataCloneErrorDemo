@@ -1,18 +1,11 @@
 import { Component } from '@angular/core';
+import { Provider } from 'ethers/providers';
 
-
-type Provider = any;
-type AsyncSendable = any;
 
 declare global {
   interface Window {
-    web3: {
-      currentProvider: AsyncSendable;
-      eth: {
-        sendTransaction: (...x: any) => void;
-      };
-    };
-    ethereum: {     // Provider &
+    web3: Web3;
+    ethereum: Provider & {
       enable: () => Promise<void>;
     };
   }
@@ -20,7 +13,8 @@ declare global {
   // MetaMask Web3 object
   class Web3 {
     constructor(provider?: Provider | string);
-    currentProvider: AsyncSendable;
+
+    currentProvider: Provider;
     eth: {
       sendTransaction: (...x: any) => void;
     };
@@ -38,12 +32,12 @@ export class AppComponent {
   title = 'DataCloneErrorDemo';
 
   constructor() {
+
     if (window.ethereum) {
       // Modern dapp browsers...
       window.web3 = new Web3(ethereum);
       try {
         // Request account access if needed
-        // await
         ethereum.enable()
           .then(res => {
             console.log(`window.ethereum.enable() then:`, res);
@@ -68,6 +62,7 @@ export class AppComponent {
       // Non-dapp browsers...
       console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
+
   }
 
 }
