@@ -83,8 +83,7 @@ export class AppComponent {
     const provider = ethereum;
 
     const liquidLong: LiquidLong = LiquidLong.createWeb3(
-      // provider,                                                       // should be AsyncSendable
-      provider,
+      provider,                                                       // should be AsyncSendable
       environment.liquidLongContractAddress,
       defaultEthPriceInUsd,
       defaultProviderFeeRate,
