@@ -283,6 +283,13 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@keydonix/liquid-long-client-library@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@keydonix/liquid-long-client-library/-/liquid-long-client-library-1.3.1.tgz#aa01cdfb9530bcd31dab92d629baa360e310ee06"
+  integrity sha512-u2E6yK+44AYTkqFDngg731N1H6rpm1Vbmr+idWLvh09voeGPQDxlq8uua7yrr4Z1wIvDMpG3fK3HY+4R6ecsRA==
+  dependencies:
+    ethers "4.0.7"
+
 "@ngtools/webpack@7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-7.1.0.tgz#20f401f85822923032f19dbd745ad4efb027847d"
@@ -2377,6 +2384,22 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+ethers@4.0.7:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/ethers/-/ethers-4.0.7.tgz#8c653618077a1fc60c5c1b2575da03561f0039f4"
+  integrity sha512-HGR2FcyeiRjg6qZUjtK5gkTp7puB+KPhBDa0s2zG4IMVcfU33rkhl9yBIqZBzpD5J0fE33gQ57+epZh90nBaeA==
+  dependencies:
+    "@types/node" "^10.3.2"
+    aes-js "3.0.0"
+    bn.js "^4.4.0"
+    elliptic "6.3.3"
+    hash.js "1.1.3"
+    js-sha3 "0.5.7"
+    scrypt-js "2.0.4"
+    setimmediate "1.0.4"
+    uuid "2.0.1"
+    xmlhttprequest "1.8.0"
 
 ethers@^4.0.15:
   version "4.0.15"
