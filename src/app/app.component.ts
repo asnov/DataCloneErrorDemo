@@ -1,31 +1,26 @@
 import { Component } from '@angular/core';
-import { ethers } from 'ethers';
+// import { ethers } from 'ethers';
 
 import { LiquidLong } from '@keydonix/liquid-long-client-library';
 
 import { environment } from '../environments/environment';
 
+import Web3type from 'web3';
+import { Provider } from 'web3/providers';
+
 
 declare global {
   interface Window {
-    web3: Web3;
-    ethereum: ethers.providers.AsyncSendable & {
+    web3: Web3type;
+    Web3: typeof Web3type;
+    ethereum: Provider & {
       enable: () => Promise<void>;
-    };
-  }
-
-  // MetaMask Web3 object
-  class Web3 {
-    constructor(provider?: ethers.providers.AsyncSendable | string);
-
-    currentProvider: ethers.providers.Web3Provider;
-    eth: {
-      sendTransaction: (...x: any) => void;
     };
   }
 }
 declare const ethereum: typeof window.ethereum;    // MetamaskInpageProvider
-declare const web3: typeof window.web3;
+declare const web3: Web3type;
+declare const Web3: typeof Web3type;
 
 @Component({
   selector: 'app-root',
@@ -91,6 +86,10 @@ export class AppComponent {
       environment.ethPricePollingFrequency,
       environment.providerFeePollingFrequency,
     );
+
+    liquidLong.getEthPriceInUsd()
+      .then(price => console.log(`liquidLong.getEthPriceInUsd() then:`, price))
+      .catch(err => console.log(`liquidLong.getEthPriceInUsd() catch:`, err));
 
   }
 }

@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
 
+## Goal
+  
+The goal is to reproduce, diagnose and fix the next error while using @keydonix/liquid-long-client-library:
+```
+ERROR Error: Uncaught (in promise): DataCloneError: Failed to execute 'postMessage' on 'Window': function (error, result) {
+                if (error) {
+                    reject(error);
+                    ...<omitted>... } could not be cloned.
+Error: Failed to execute 'postMessage' on 'Window': function (error, result) {
+                if (error) {
+                    reject(error);
+                    ...<omitted>... } could not be cloned.
+``` 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
